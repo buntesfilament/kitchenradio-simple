@@ -1,0 +1,15 @@
+[Unit]
+Description=Radio
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+WorkingDirectory=/home/pi/kitchenradio-simple
+User=pi
+Type=simple
+ExecStart=/home/pi/kitchenradio-simple/radio.sh
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=default.target

@@ -2,6 +2,15 @@ import RPi.GPIO as GPIO
 import time
 import sys
 
+# physical setup:
+# - LED ground to a 330-470 Ohm resistor
+# - LED + to GPIO-pin 18 (6th on outer row)
+# - resistor to GPIO ground (3rd on outer row)
+
+# usage:
+# - run script: python "./led.py on" to switch on
+# - run script: python "./led.py" to switch off
+
 led_switch = GPIO.LOW
 n = len(sys.argv)
 print("n = " + str(n))

@@ -8,12 +8,15 @@
 
 ```
 cd /home/pi/gits  # and clone here
-cp ./systemd-service /etc/systemd/system/.
+cp ./config/systemd/system/kitchenradio-* /etc/systemd/system/.
 chmod u+x ./radio.sh
+sudo systemctl daemon-reload
+sudo systemctl enable kitchenradio-fip-stop.timer
+sudo systemctl start kitchenradio-fip-stop.timer
 cp php/fip* /var/www/html/.
 ```
 
-- create a sudoers-entry with `sudi visudo` to allow www-data (in case of Apache2) execute the kitchenradio-fip.service
+- create a sudoers-entry with `sudo visudo` to allow www-data (in case of Apache2) execute the kitchenradio-fip.service
 
 ```
 www-data ALL=(ALL) NOPASSWD: /bin/systemctl start kitchenradio-fip.service, /bin/systemctl stop kitchenradio-fip.service

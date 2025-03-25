@@ -1,0 +1,9 @@
+[Unit]
+Description=Stop radio
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl stop kitchenradio-fip.service
+
+[Install]
+WantedBy=default.target

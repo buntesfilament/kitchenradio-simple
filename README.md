@@ -8,11 +8,8 @@
 
 ```
 cd /home/pi/gits  # and clone here
-cp ./config/systemd/system/kitchenradio-* /etc/systemd/system/.
+cp ./config/systemd/system/kitchenradio-fip.service /etc/systemd/system/.
 chmod u+x ./radio.sh
-sudo systemctl daemon-reload
-sudo systemctl enable kitchenradio-fip-stop.timer
-sudo systemctl start kitchenradio-fip-stop.timer
 cp php/fip* /var/www/html/.
 ```
 

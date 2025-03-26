@@ -1,9 +1,0 @@
-[Unit]
-Description=Stop timer for radio
-
-[Timer]
-OnActiveSec=4h
-Unit=kitchenradio-fip.service
-
-[Install]
-WantedBy=timers.target
